@@ -32,11 +32,8 @@ Install the following software:
 * [Postman](https://www.postman.com/) as an optional tool to use instead of *Curl* command to interact with application endpoints.
   
 Clone repository using the below command:
-**Clone repository.**
 
-    ```bash
     gh repo clone DudeBeCool/crud-ha-project
-    ```
 
 ### Run crud application locally
 The following steps will guide you through building an application image, running it, and local tests.
