@@ -35,7 +35,7 @@ Clone repository using the below command:
 **Clone repository.**
 
     ```bash
-    git clone git@github.com:DudeBeCool/crud-ha-project.git
+    gh repo clone DudeBeCool/crud-ha-project
     ```
 
 ### Run crud application locally
