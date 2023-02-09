@@ -1,6 +1,21 @@
 # Simple HA infrastructure project
 
-[[_TOC_]]
+- [Simple HA infrastructure project](#simple-ha-infrastructure-project)
+  - [About Project](#about-project)
+  - [Quick start](#quick-start)
+    - [Requirements for playing with CRUD:](#requirements-for-playing-with-crud)
+    - [Run crud application locally](#run-crud-application-locally)
+    - [Test examples using Curl](#test-examples-using-curl)
+  - [Requirements for deploying CRUD application on Amazon Web Services](#requirements-for-deploying-crud-application-on-amazon-web-services)
+  - [Overview of Architecture](#overview-of-architecture)
+  - [AWS services](#aws-services)
+  - [How to provision infra](#how-to-provision-infra)
+    - [AWS account](#aws-account)
+    - [SSH key pair](#ssh-key-pair)
+    - [Terraform](#terraform)
+    - [Ansible](#ansible)
+    - [How to manage app status and version using Ansible](#how-to-manage-app-status-and-version-using-ansible)
+  - [The end](#the-end)
 
 ## About Project
 This project purpose is purely educational and is created with the intention of using commonly used technologies to create simple HA infrastructure on AWS (mostly free tier services). 
