@@ -1,0 +1,20 @@
+#Playbook for crud application management (conteneraized app)
+- name: Run crud application from image
+  hosts: crudservers
+  become_user: ubuntu
+  tasks:
+    - name : Manage container run, reload and update
+      docker_container:
+        name: crud_app
+        image: '{{ container_image }}'
+        #present to run; started to reload; stopped to stop; absent to remove;
+        state: '{{ container_state | default("started")}}'
+        #reload container if state is equal to started
+        restart: yes
+        #pull ensure that image is always newest
+        pull: yes
+        detach: yes
+        ports:
+          - '{{ container_port | default("80:8081") }}'
+        env:
+          DATABASE_URL: '{{ db_url }}'

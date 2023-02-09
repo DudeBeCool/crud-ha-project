@@ -1,0 +1,9 @@
+# Terraform state files
+.terraform.lock.hcl
+.terraform
+providers
+terraform.tfstate
+test.auto.tfvars
+
+# Ansible inventory
+inventory.tpl

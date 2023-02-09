@@ -1,0 +1,42 @@
+#local test or debugging purpose
+version: '3.9'
+
+services:
+#use flask application from repository
+  crud:
+    container_name: crud
+    image: crud
+    restart: always
+    build: .
+    ports:
+      - "8081:8081"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
+      - FLASK_DEBUG=1
+      - FLASK_APP=./app.py
+    #ensure DB will be alawys started before crud app
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    volumes:
+      - ./app.py:/home/crud/app.py
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: postgres:12
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
