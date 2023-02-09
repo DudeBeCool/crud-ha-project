@@ -50,9 +50,9 @@ The following steps will guide you through building an application image, runnin
     ```
 
 **You should see both containers up and running (DB & Pythonapp)**
-4. All core changes regarding appliction features and endpoints should be made directly in [crud.py](crud.py) file.
+4. All core changes regarding appliction features and endpoints should be made directly in [app.py](app.py) file.
    
-5. Any change in [crud.py](crud.py) file will reload the container and adapt all changes that were made thanks to *docker live reload* compose configuration.
+5. Any change in [app.py](app.py) file will reload the container and adapt all changes that were made thanks to *docker live reload* compose configuration.
    
 6. To test the applicationyou can choose from one of three methods:
     * [6.1] use *Curl* command based on json structure you based on provided examples
